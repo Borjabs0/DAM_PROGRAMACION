@@ -1,4 +1,4 @@
-package com.borjabolufer.segundotrimestre.tema07;
+package com.borjabolufer.segundotrimestre.tema07.ejercicio07;
 
 public class Estadistica {
     private double mediaTemperatura;

@@ -1,4 +1,4 @@
-package com.borjabolufer.segundotrimestre.tema07;
+package com.borjabolufer.segundotrimestre.tema07.ejercicio07;
 
 import com.borjabolufer.Lib.ConsoleMenu;
 import com.borjabolufer.Lib.LibIO;
@@ -49,7 +49,7 @@ public class Ejercicio07 {
                     break;
 
                 case 4:
-                    altaMedica();
+                    //altaMedica();
                     break;
                 case 5:
                     System.out.println("Hasta pronto!");
@@ -60,17 +60,17 @@ public class Ejercicio07 {
 
     }
 
-    private static void altaMedica() {
-        String sip = LibIO.solicitarString("Sip", 4, 12);
-        String motivoAlta = LibIO.solicitarString("Motivo del alta", 4, 100);
-        if (centroSalud.altaMedica(sip, motivoAlta)){
-            System.out.println("Paciente dado de alta correctamente");
-        }else {
-            System.err.println("Paciente no dado de alta");
-        }
-    }
+//    private static void altaMedica() {
+//        String sip = LibIO.solicitarString("Sip", 4, 12);
+//        String motivoAlta = LibIO.solicitarString("Motivo del alta", 4, 100);
+//        if (centroSalud.altaMedica(sip, motivoAlta)){
+//            System.out.println("Paciente dado de alta correctamente");
+//        }else {
+//            System.err.println("Paciente no dado de alta");
+//        }
+//    }
 
-    public void consultas() {
+    public static void consultas() {
         int opcion = menuConsultas.mostrarMenu();
         switch (opcion) {
             case 1:
@@ -80,7 +80,7 @@ public class Ejercicio07 {
                 buscarPorFechas();
                 break;
             case 3:
-                Estadistica estadistica =;
+              //  Estadistica estadistica =;
                 break;
             case 4:
                 mostrarHistoricoMensual();
@@ -89,7 +89,7 @@ public class Ejercicio07 {
         }
     }
 
-    private void mostrarHistoricoMensual() {
+    private static void mostrarHistoricoMensual() {
         Atencion[] historicoAtenciones = centroSalud.obtenerhistoricoAtenciones();
         System.out.println(Arrays.toString(historicoAtenciones));
         //mostrara datos -1000
@@ -100,7 +100,7 @@ public class Ejercicio07 {
         System.out.println(Arrays.toString(historicoAtenciones));
     }
 
-    public void buscarPorSip(){
+    public static void buscarPorSip(){
         String sip;
         sip = LibIO.solicitarString("Sip", 4, 12);
         Paciente paciente = centroSalud.buscarPacientePorSip(sip);
@@ -111,11 +111,11 @@ public class Ejercicio07 {
         }
     }
 
-    public  void buscarPorFechas(){
+    public static void buscarPorFechas(){
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Date fechaInicio = LibIO.solicitarFechaDate("Fecha inicio: [dd/MM/yyyy]", sdf);
         Date fechaFin = LibIO.solicitarFechaDate("Fecha fin: [dd/MM/yyyy]", sdf);
-        Atencion[] atencionesPorFecha = centroSalud.buscarAtencionesPorFecha(fechaInicio, fechaFin);
+        // Atencion[] atencionesPorFecha = centroSalud.buscarAtencionesPorFecha(fechaInicio, fechaFin);
         //Faltan cosas
     }
     public static void nuevoPaciente() {

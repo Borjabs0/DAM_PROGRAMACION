@@ -1,11 +1,8 @@
-package com.borjabolufer.segundotrimestre.tema07;
+package com.borjabolufer.segundotrimestre.tema07.ejercicio07;
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.Year;
 import java.time.ZoneId;
-import java.time.temporal.TemporalUnit;
 import java.util.Date;
-import java.util.Locale;
 
 public class Paciente {
 

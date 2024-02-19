@@ -1,4 +1,4 @@
-package com.borjabolufer.segundotrimestre.tema07;
+package com.borjabolufer.segundotrimestre.tema07.ejercicio07;
 
 import net.datafaker.Faker;
 
@@ -117,29 +117,29 @@ public boolean atenderPaciente(String sip, double temperatura, double ppm, doubl
        atencion.setConstantesVitales(temperatura, ppm, tensionSistolica, tensionDiastolica);
        return true;
 }
-public Atencion[] buscarAtencionesPorFecha(Date fechaInicio, Date fechaFin){
-       int contadorAtenciones = 0;
-       Atencion[] atencionesPorFecha = null;
-    long timestampFechaInicio = fechaInicio.getTime();
-            long timestampFechaFin = fechaFin.getTime();
-       for (int i = 0; i < numAtenciones; i++) {
-           long timestampAtencion = atenciones[i].getFechaEntrada().getTime();
-           if (timestampAtencion >= timestampFechaInicio && timestampAtencion <= timestampFechaFin) {
-               contadorAtenciones++;
-           }
-    }
-      /* atencionesPorFecha = new Atencion[contadorAtenciones];
-       contadorPorFecha =
-       Acabar!!!!!
-*/
-    }
-    public boolean altaMedica(String sip, String motivoAlta){
-       Atencion atencion = buscarAtencionPaciente(sip, true);
-       if (atencion == null)
-           return false;
-       atencion.altaPaciente(new Date(), motivoAlta);
-        return true;
-   }
+//public Atencion[] buscarAtencionesPorFecha(Date fechaInicio, Date fechaFin){
+//       int contadorAtenciones = 0;
+//       Atencion[] atencionesPorFecha = null;
+//    long timestampFechaInicio = fechaInicio.getTime();
+//            long timestampFechaFin = fechaFin.getTime();
+//       for (int i = 0; i < numAtenciones; i++) {
+//           long timestampAtencion = atenciones[i].getFechaEntrada().getTime();
+//           if (timestampAtencion >= timestampFechaInicio && timestampAtencion <= timestampFechaFin) {
+//               contadorAtenciones++;
+//           }
+//    }
+//      /* atencionesPorFecha = new Atencion[contadorAtenciones];
+//       contadorPorFecha =
+//       Acabar!!!!!
+//*/
+//    }
+//    public boolean altaMedica(String sip, String motivoAlta){
+//       Atencion atencion = buscarAtencionPaciente(sip, true);
+//       if (atencion == null)
+//           return false;
+//       atencion.altaPaciente(new Date(), motivoAlta);
+//        return true;
+//   }
     public Atencion[] obtenerhistoricoAtenciones(){
         //Opcion 1: Devolver los datos originales (Copia superficial solo copia punteros)
         // return  atenciones;
@@ -150,9 +150,9 @@ public Atencion[] buscarAtencionesPorFecha(Date fechaInicio, Date fechaFin){
         }
         return  historicoAtenciones;
    }
-    public Estadistica obtenerEstadisticas(){
-       return new Estadistica((atenciones, ));
-    }
+//    public Estadistica obtenerEstadisticas(){
+//       return new Estadistica((atenciones, ));
+//    }
 
     public boolean entradaPaciente(Paciente paciente, String sintomatologia){
     atenciones[numAtenciones] = new Atencion(paciente, new Date(), sintomatologia);

@@ -1,4 +1,4 @@
-package com.borjabolufer.segundotrimestre.tema07;
+package com.borjabolufer.segundotrimestre.tema07.ejercicio07;
 
 import java.util.Arrays;
 import java.util.Date;
