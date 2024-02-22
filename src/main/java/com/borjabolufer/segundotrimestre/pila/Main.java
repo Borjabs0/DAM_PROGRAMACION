@@ -1,5 +1,8 @@
 package com.borjabolufer.segundotrimestre.pila;
 
+import com.borjabolufer.segundotrimestre.pila.ejercicio3.CodigoFuenteParser;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -7,8 +10,18 @@ public class Main {
         Pila pila = new Pila(10);
         Scanner scanner = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
+
+        ArrayList<String> a = new ArrayList<>();
         while (scanner.hasNext()){
             sb.append(scanner.nextLine());
+        }
+        CodigoFuenteParser codigoFuenteParser = new CodigoFuenteParser(sb.toString(), "{([", "})]");
+        if (codigoFuenteParser.parse()){
+            System.out.println("El documento esta bien formado");
+        }
+        else {
+            System.out.println("El documento no está bien formado");
+            System.out.println(codigoFuenteParser.getErrores());
         }
         String texto = sb.toString();
         texto = texto.replaceAll("\\s+", "");

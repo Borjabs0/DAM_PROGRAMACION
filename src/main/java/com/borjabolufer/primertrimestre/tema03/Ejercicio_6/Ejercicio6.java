@@ -1,4 +1,4 @@
-package com.borjabolufer.primertrimestre.tema03.Ejercicio_6;
+/*package com.borjabolufer.primertrimestre.tema03.Ejercicio_6;
 
 import java.util.Scanner;
 
@@ -62,4 +62,4 @@ public class Ejercicio6 {
         System.out.println("Monedas de 2 centimos de €: " + moneda2C);
         System.out.println("Monedas de 1 centimo de €: " + moneda1C);
     }
-}
+}*/
