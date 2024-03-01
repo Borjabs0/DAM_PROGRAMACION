@@ -9,7 +9,6 @@ public class Calculadora {
     public static void main(String[] args) {
         int width = 400;
         int height = 400;
-
         String[] simbolosUno = new String[]
                 {"C", "CE", "%", "/",
                         "7", "8", "9", "*",
