@@ -17,8 +17,8 @@ public class CalculadoraUI {
                 {new Boton("5", Boton.Accion.DIGITO),  new Boton("6", Boton.Accion.DIGITO),new Boton("7", Boton.Accion.DIGITO) , new Boton("-", Boton.Accion.OPERADOR)},
                 {new Boton("1", Boton.Accion.DIGITO),  new Boton("2", Boton.Accion.DIGITO),new Boton("3", Boton.Accion.DIGITO) , new Boton("+", Boton.Accion.OPERADOR)},
                 {new Boton("0", Boton.Accion.DIGITO),  new Boton(".", Boton.Accion.DIGITO),new Boton("AC", Boton.Accion.DIGITO) , new Boton("=", Boton.Accion.OPERADOR)},
-
         };
+        
 
 
         //Ventana
@@ -53,21 +53,25 @@ public class CalculadoraUI {
         panelBotones.setLayout(gridLayoutBoton);
         for (int i = 0; i < textoBotones.length; i++) { // Bucle el qual va a recorrer las filas de la matriz
             for (int j = 0; j < textoBotones[i].length; j++) {// Bucle el qual va a recorrer las columnas de la matriz
-                JButton boton = new JButton("" + textoBotones[i][j]);// Creacion de un nuevo objeto = boton el qual le pasaremos las filas y columnas de la matriz
-                buttons[i * textoBotones[0].length + j] = boton;//
-                boton.addActionListener(actionListener);
-                panelBotones.add(boton);// Agrega el boton creado al panelBotones
+                Boton boton  = textoBotones[i][j];
+                //JButton boton = new JButton("" + textoBotones[i][j]);// Creacion de un nuevo objeto = boton el qual le pasaremos las filas y columnas de la matriz
+                //buttons[i * textoBotones[0].length + j] = boton;
+//                switch (boton.getAction()){
+
+                }
+//                boton.addActionListener(actionListener);
+//                panelBotones.add(boton);// Agrega el boton creado al panelBotones
             }
         }
-        panelPrincipal.add(panelCalculadora);
-        panelPrincipal.add(panelBotones);
-        ventana1.setContentPane(panelPrincipal);
-        ventana1.setBounds((int)x, (int)y, width, height);
-        ventana1.pack();
-        ventana1.setVisible(true);
+//        panelPrincipal.add(panelCalculadora);
+//        panelPrincipal.add(panelBotones);
+//        ventana1.setContentPane(panelPrincipal);
+//        ventana1.setBounds((int)x, (int)y, width, height);
+//        ventana1.pack();
+//        ventana1.setVisible(true);
 
 
     }
-}
+//}
 
 
