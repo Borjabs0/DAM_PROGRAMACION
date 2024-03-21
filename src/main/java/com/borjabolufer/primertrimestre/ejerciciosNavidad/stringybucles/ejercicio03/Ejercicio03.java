@@ -2,7 +2,7 @@ package com.borjabolufer.primertrimestre.ejerciciosNavidad.stringybucles.ejercic
 
 public class Ejercicio03 {
     public static void main(String[] args) {
-        Cesar cesar =new Cesar("Claudia", 3);
+        Cesar cesar =new Cesar("CAFE", 3);
         System.out.println(cesar.cifrar());
     }
 }
