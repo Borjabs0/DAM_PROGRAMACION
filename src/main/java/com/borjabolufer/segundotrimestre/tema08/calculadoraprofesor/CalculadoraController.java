@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
  **/
 public class CalculadoraController {
     private final Calculadora calculadora;
-    private JLabel pantalla = new JLabel();
+    private JLabel pantalla;
     private final ActionListener actionDigito;
     // private final ActionListener actionPunto;
     private final ActionListener actionOperador;
@@ -27,7 +27,7 @@ public class CalculadoraController {
 
     public CalculadoraController(JLabel display) {
         calculadora = new Calculadora();
-        this.pantalla = pantalla;
+        this.pantalla = display;
         actionDigito = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

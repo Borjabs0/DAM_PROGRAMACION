@@ -19,6 +19,7 @@ public class Calculadora {
         operando1 = new StringBuilder();
         operando2 = new StringBuilder();
         operandoActual = operando1;
+        operador = null;
         resultado = "0";
         estadoActual = Estado.OPERANDO_ENTERO;
         diagramaEstados = new Estado[][] {
@@ -91,6 +92,36 @@ public class Calculadora {
     if (operando1.isEmpty() || operando2.isEmpty()){
         return;
     }
+    double x  =  Double.parseDouble(operando1.toString());
+    double y = Double.parseDouble(operando2.toString());
+    double res = 0;
+    switch (operador){
+        case "+":
+            res = x + y;
+        break;
+        case "-":
+            res = x - y;
+            break;
+        case "*":
+            res = x * y;
+            break;
+
+        case "/":
+            res = x / y;
+            break;
+
+        case "MOD":
+            res = x % y;
+            break;
+
+        default:
+            resultado = "Operador" + operador + " no implementado";
+            return;
+    }
+    estadoActual = siguienteEstado;
+    operandoActual = operando1;
+    operador = null;
+    resultado = String.valueOf(res);
     }
     private boolean esTransicionValida(Estado siguienteEstado) {
         Estado[] estadosTransitables = diagramaEstados[estadoActual.ordinal()];

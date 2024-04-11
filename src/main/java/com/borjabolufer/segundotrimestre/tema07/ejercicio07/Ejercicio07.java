@@ -18,6 +18,7 @@ public class Ejercicio07 {
 
 
         CentroSalud centroSalud = new CentroSalud(500, 3000);
+        System.out.println(centroSalud);
         //Menu Principal
         menuPrincipal = new ConsoleMenu("URGENCIAS");
         menuPrincipal.addOpcion("Nuevo paciente ");
@@ -115,7 +116,7 @@ public class Ejercicio07 {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Date fechaInicio = LibIO.solicitarFechaDate("Fecha inicio: [dd/MM/yyyy]", sdf);
         Date fechaFin = LibIO.solicitarFechaDate("Fecha fin: [dd/MM/yyyy]", sdf);
-        // Atencion[] atencionesPorFecha = centroSalud.buscarAtencionesPorFecha(fechaInicio, fechaFin);
+        Atencion[] atencionesPorFecha = centroSalud.buscarAtencionesPorFecha(fechaInicio, fechaFin);
         //Faltan cosas
     }
     public static void nuevoPaciente() {

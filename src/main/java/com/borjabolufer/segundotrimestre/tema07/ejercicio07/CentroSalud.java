@@ -42,17 +42,6 @@ public class CentroSalud {
 
            pacientes[numPacientes] = new Paciente(sip, nombre, genero, fechaNacimiento);
            numPacientes++;
-
-          /* if (cantidadPacientes[i].getSip() == sip) {
-               System.out.println("Paciente existente");
-               return cantidadPAcientes[i];
-           }else if (cantidadPAcientes[i] == null){
-               Paciente paciente = new Paciente(sip, nombre, genero, fechaNacimiento);
-               cantidadPAcientes[i] = paciente;
-               altaPaciente  = paciente;
-               return paciente;
-           }
-*/
        }
 
     }
@@ -117,29 +106,38 @@ public boolean atenderPaciente(String sip, double temperatura, double ppm, doubl
        atencion.setConstantesVitales(temperatura, ppm, tensionSistolica, tensionDiastolica);
        return true;
 }
-//public Atencion[] buscarAtencionesPorFecha(Date fechaInicio, Date fechaFin){
-//       int contadorAtenciones = 0;
-//       Atencion[] atencionesPorFecha = null;
-//    long timestampFechaInicio = fechaInicio.getTime();
-//            long timestampFechaFin = fechaFin.getTime();
-//       for (int i = 0; i < numAtenciones; i++) {
-//           long timestampAtencion = atenciones[i].getFechaEntrada().getTime();
-//           if (timestampAtencion >= timestampFechaInicio && timestampAtencion <= timestampFechaFin) {
-//               contadorAtenciones++;
-//           }
-//    }
-//      /* atencionesPorFecha = new Atencion[contadorAtenciones];
-//       contadorPorFecha =
-//       Acabar!!!!!
-//*/
-//    }
-//    public boolean altaMedica(String sip, String motivoAlta){
-//       Atencion atencion = buscarAtencionPaciente(sip, true);
-//       if (atencion == null)
-//           return false;
-//       atencion.altaPaciente(new Date(), motivoAlta);
-//        return true;
-//   }
+public Atencion[] buscarAtencionesPorFecha(Date fechaInicio, Date fechaFin) {
+    int contadorAtenciones = 0;
+    Atencion[] atencionesPorFecha = null;
+    long timestampFechaInicio = fechaInicio.getTime();
+    long timestampFechaFin = fechaFin.getTime();
+    for (int i = 0; i < numAtenciones; i++) {
+        long timestampAtencion = atenciones[i].getFechaEntrada().getTime();
+        if (timestampAtencion >= timestampFechaInicio && timestampAtencion <= timestampFechaFin) {
+            contadorAtenciones++;
+        }
+    }
+    if (contadorAtenciones > 0) {
+        atencionesPorFecha = new Atencion[contadorAtenciones];
+        int cont = 0;
+        /* Una vez sabemos el número de registros del paciente los asignamos al vector **/
+        for (int i = 0; i < numAtenciones; i++) {
+            long timestampAtencion = atenciones[i].getFechaEntrada().getTime();
+            if (timestampAtencion >= timestampFechaInicio && timestampAtencion <= timestampFechaFin) {
+                atencionesPorFecha[cont] = atenciones[i];
+                cont++;
+            }
+        }
+    }
+return atencionesPorFecha;
+}
+    public boolean altaMedica(String sip, String motivoAlta){
+       Atencion atencion = buscarAtencionPaciente(sip, true);
+       if (atencion == null)
+           return false;
+       atencion.altaPaciente(new Date(), motivoAlta);
+        return true;
+   }
     public Atencion[] obtenerhistoricoAtenciones(){
         //Opcion 1: Devolver los datos originales (Copia superficial solo copia punteros)
         // return  atenciones;

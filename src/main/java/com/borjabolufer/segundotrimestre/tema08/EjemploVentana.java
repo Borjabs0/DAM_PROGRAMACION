@@ -42,7 +42,6 @@ public class EjemploVentana {
         ventana1.setVisible(true);
 
         /*int opcion = JOptionPane.showConfirmDialog(ventana1, "¿Seguro que quiere salir?");
-        System.out.print(opcion);
-*/
+        System.out.print(opcion);*/
     }
 }

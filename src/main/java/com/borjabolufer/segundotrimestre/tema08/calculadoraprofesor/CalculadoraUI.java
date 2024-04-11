@@ -17,9 +17,10 @@ import java.awt.event.ActionListener;
  * @since 0.1, 2024-02-29
  **/
 public class CalculadoraUI {
+
     public CalculadoraUI(int width, int height) {
         Boton[][] textoBotones = {
-                {new Boton("ON",Boton.Accion.ON), new Boton("OFF", Boton.Accion.OFF), new Boton("%", Boton.Accion.OPERADOR), new Boton("/", Boton.Accion.OPERADOR)},
+                {new Boton("ON",Boton.Accion.ON), new Boton("OFF", Boton.Accion.OFF), new Boton("MOD", Boton.Accion.OPERADOR), new Boton("/", Boton.Accion.OPERADOR)},
                 {new Boton("7", Boton.Accion.DIGITO), new Boton("8", Boton.Accion.DIGITO), new Boton("9", Boton.Accion.DIGITO), new Boton("*", Boton.Accion.OPERADOR)},
                 {new Boton("4", Boton.Accion.DIGITO), new Boton("5", Boton.Accion.DIGITO), new Boton("6", Boton.Accion.DIGITO), new Boton("-", Boton.Accion.OPERADOR)},
                 {new Boton("1", Boton.Accion.DIGITO), new Boton("2", Boton.Accion.DIGITO), new Boton("3", Boton.Accion.DIGITO), new Boton("+", Boton.Accion.OPERADOR)},
@@ -42,6 +43,7 @@ public class CalculadoraUI {
         // Panel display calculadora
         JPanel panelDisplay = new JPanel();
         panelDisplay.setLayout(new GridLayout(1, 1, 5, 5));
+
         JLabel display = new JLabel("0", SwingConstants.RIGHT);
         display.setFont(new Font("Courier", Font.PLAIN, 24));
         display.setBackground(Color.GRAY);
@@ -49,6 +51,7 @@ public class CalculadoraUI {
         display.setBorder(new EmptyBorder(10, 10, 10, 10));
         panelDisplay.add(display);
         panelPrincipal.add(panelDisplay);
+
         CalculadoraController calculadoraController = new CalculadoraController(display);
 
 

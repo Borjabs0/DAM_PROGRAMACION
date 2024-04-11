@@ -15,7 +15,7 @@ public class LibIO {
             result = scanner.nextLine();
             valido = result.length() >= longitudMinima && result.length() <= longitudMaxima;
             if (!valido)
-                System.err.printf("La longitud debe estar entre %d y %d", longitudMinima, longitudMaxima);
+                System.err.printf("La longitud debe estar entre %d y %d ", longitudMinima, longitudMaxima);
 
         }while(!valido);
         return result;

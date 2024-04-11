@@ -15,7 +15,7 @@ public class Cesar {
     public String cifrar(){
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < contrasenya.length(); i++){
-            char posicionPass = contrasenya.charAt(i);
+            char posicionPass = contrasenya.charAt(i); 
             if (Character.isLowerCase(posicionPass)) {
                 int indiceOriginal = abecedario.indexOf(posicionPass);
                 int nuevoIndice = (indiceOriginal + numero) % abecedario.length();

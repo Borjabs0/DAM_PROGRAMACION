@@ -1,4 +1,5 @@
 package com.borjabolufer.Lib;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ConsoleMenu {
@@ -65,7 +66,7 @@ public class ConsoleMenu {
         do {
             System.out.println(this);
             opcion = Integer.parseInt(scanner.nextLine());
-            valido = opcion >= 1 && opcion <= numOpciones;
+            valido = opcion >= 0 && opcion <= numOpciones;
         }while (!valido);
         return  opcion;
     }
@@ -73,13 +74,18 @@ public class ConsoleMenu {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("*** ").append(texto).append(" ***\n");
-        sb.append("-------------------\n");
-        sb.append("Elija la opcion\n");
-        sb.append("-------------------\n");
-        for (int i = 0; i < numOpciones; i++) {
+        sb.append("*******************\n");
+        sb.append("***  ").append(texto).append("  ***\n");
+        sb.append("*******************\n");
+        for (int i = 0; i < numOpciones - 1; i++) {
             sb.append(i + 1).append(". ").append(opciones[i].texto).append("\n");//Ajustar con String format
         }
+        sb.append("--------------------\n");
+        if (numOpciones >= 0){
+            sb.append(0).append(". ").append(opciones[numOpciones - 1].texto).append("\n");
+        }
+        sb.append("\n");
+        sb.append("Elija una opción: \n");
         return sb.toString();
     }
 }
